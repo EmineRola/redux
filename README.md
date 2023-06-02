@@ -34,3 +34,5 @@ redux sadece reacta ait bir özellik değil, hem genel paketi indiriyor hem redu
 4.  Dispatch: Actionları reducara gönderirir.
 5.  Reducer: Gönderilen aksiyonları analiz edip typlerine göre store günceller.
 6.  Subscribe: Store içerisimdeki verlere erişmek için yöntem
+
+![](<./src/assests/ekran%20(2).gif>)

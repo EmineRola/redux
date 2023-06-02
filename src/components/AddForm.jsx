@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-{
-}
+import axios from "axios";
 
 const AddForm = () => {
   //dispatch metodunu güncelleme aksiyonları reducere sevk etmek
@@ -14,15 +13,21 @@ const AddForm = () => {
     //yeni bir todo objesi oluşturma
     const newTodo = {
       id: new Date().getTime(),
-      text: text,
+      text,
       isDone: false,
       date: new Date(),
     };
-    //oluşturulan objeti reducera sevk etme
+    //oluşan objeyi apiye gönderme
+    axios.post("http://localhost:3030/todos", newTodo);
+
+    //oluşan objeyi reducera sevk etme
     dispatch({
       type: "ADD_TODO",
       payload: newTodo,
     });
+
+    //oluşturulan objeti reducera sevk etme
+
     //actionu çalıştırıp reducera gönderecek ne yapacağını ekledik ve aynı zamanda neyi ekleyecek yada
     //Hangi öğeye işlem yapacak
     //şuan reducera gönderdik
